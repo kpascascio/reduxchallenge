@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
-import { createStore } from 'redux';
-import Counter from './reducer/index';
+import Counter from './components/Counter';
+import { createStore, applyMiddleware } from 'redux';
+import ReducerCounter from './reducer/reducerIndex';
+import reduxThunk from 'redux-thunk';
 
-// const middleStore = applyMiddleware(reduxThunk)(createStore)
+const middleStore = applyMiddleware(reduxThunk)(createStore)
 
-const store = createStore(Counter)
-ReactDOM.render(<App store= {store}/>, document.getElementById('root'));
-registerServiceWorker();
+const store = middleStore(ReducerCounter)
+ReactDOM.render(<Counter store= {store}/>, document.getElementById('root'));

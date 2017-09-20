@@ -1,4 +1,4 @@
-const Counter = (state = 0, action) => {
+const ReducerCounter = (state = 0, action) => {
     switch (action.type) {
         case 'INCREMENT':
             console.log(state)
@@ -7,9 +7,9 @@ const Counter = (state = 0, action) => {
             console.log(state)
             return state - 1;
         default:
-            
+            return state;
     };
     return state;
 };
 
-export default Counter;
+export default ReducerCounter;

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {counterDecrement, counterIncrement} from '../actions/index';
-import '../styles/App.css';
+import {counterDecrement, counterIncrement} from '../actions/actionIndex';
+import '../styles/Counter.css';
 import { connect } from 'react-redux';
 
-class App extends Component {
+class Counter extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="Counter">
         <div>
           <h1>{ this.props.value }</h1>
           <button onClick={counterIncrement(this.props.store)}>+</button>
@@ -22,4 +22,4 @@ const mapStateToProps = (state) =>{
   return { value : state }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Counter);
