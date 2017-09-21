@@ -1,6 +1,6 @@
 export function counterIncrement(store) {
     return ()=>{
-        store.dispatch({type:'INCREMENT'})
+        store.dispatch({type:'increment'})
     }
 }
 

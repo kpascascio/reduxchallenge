@@ -5,7 +5,7 @@ const ReducerCounter = (state = 0, action) => {
             return state + 1;
         case 'DECREMENT':
             console.log(state)
-            return state - 1;
+            return state;
         default:
             return state;
     };

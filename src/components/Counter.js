@@ -21,7 +21,7 @@ class Counter extends Component {
 
 const mapStateToProps = (state) =>{
   console.log('this is the state',state)
-  return { number : state }
+  return { numbers : state }
 }
 
 export default connect(mapStateToProps)(Counter);
