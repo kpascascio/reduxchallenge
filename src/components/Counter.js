@@ -6,12 +6,13 @@ import { connect } from 'react-redux';
 class Counter extends Component {
 
   render() {
+    console.log(this.props)
     return (
       <div className="Counter">
         <div>
-          <h1>{ this.props.value }</h1>
-          <button onClick={counterIncrement(this.props.store)}>+</button>
-          <button onClick={counterDecrement(this.props.store)}>-</button>
+          <h1>{ this.props.number }</h1>
+          <button onClick={counterIncrement(this.props.store)}><i className='glyphicon glyphicon-thumbs-up'></i></button>
+          <button onClick={counterDecrement(this.props.store)}><i className='glyphicon glyphicon-thumbs-down'></i></button>
         </div>
       </div>
     );
@@ -19,7 +20,8 @@ class Counter extends Component {
 }
 
 const mapStateToProps = (state) =>{
-  return { value : state }
+  console.log('this is the state',state)
+  return { number : state }
 }
 
 export default connect(mapStateToProps)(Counter);
